@@ -7,44 +7,72 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
-    padding: 20px;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #4CAF50;
-    color: white;
-}
-
-nav ul {
-    list-style: none;
+/* === Шапка сайта === */
+.site-header {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
     gap: 15px;
-    margin-top: 10px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.top-nav button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
+.top-nav button:hover {
+    background-color: #ddd;
+}
+
+/* Поиск */
+.search-box {
+    display: flex;
+    gap: 5px;
+}
+
+.search-box input[type="text"] {
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.search-box button {
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+/* Основной контент */
 main {
-    max-width: 700px;
-    margin: 20px auto;
-    background: white;
+    max-width: 800px;
+    margin: 30px auto;
     padding: 20px;
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #666;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
