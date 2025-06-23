@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой простой сайт</title>
+    <title>Мой сайт</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Добро пожаловать на мой сайт!</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">О сайте</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <!-- Логотип -->
+        <div class="logo">
+            <img src="https://via.placeholder.com/150x50?text=Logo" alt="Логотип">
+        </div>
+
+        <!-- Навигационные кнопки -->
+        <nav class="top-nav">
+            <button>Каталог</button>
+            <div class="search-box">
+                <input type="text" placeholder="Поиск...">
+                <button>Найти</button>
+            </div>
+            <button>Заказы</button>
+            <button>Избранное</button>
+            <button>Корзина</button>
+            <button>Профиль</button>
         </nav>
     </header>
 
+    <!-- Основной контент -->
     <main>
-        <p>Это пример очень простого сайта, сделанного с помощью HTML и CSS.</p>
-        <p>Здесь может быть любой ваш текст, изображения, ссылки и другое содержимое.</p>
+        <p>Это главная страница сайта. Ниже можно добавить любой контент.</p>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Мой Первый Сайт</p>
-    </footer>
 
 </body>
 </html>
