@@ -10,12 +10,9 @@
 
     <!-- Шапка сайта -->
     <header class="site-header">
-        <!-- Логотип -->
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Yandex_Market_cropp_logo.svg/2560px-Yandex_Market_cropp_logo.svg.png" alt="Логотип">
+            <img src="https://via.placeholder.com/150x50?text=Logo" alt="Логотип">
         </div>
-
-        <!-- Навигационные кнопки -->
         <nav class="top-nav">
             <button>Каталог</button>
             <div class="search-box">
@@ -30,9 +27,80 @@
     </header>
 
     <!-- Основной контент -->
-    <main>
-        <p>Это главная страница сайта. Ниже можно добавить любой контент.</p>
+    <main class="content">
+
+        <!-- Акции слева -->
+        <section class="left-section">
+            <h2>Акции</h2>
+            <div class="carousel">
+                <button class="arrow left">&#10094;</button>
+                <div class="carousel-inner">
+                    <img src=" https://via.placeholder.com/600x200?text=Баннер+1" alt="Баннер 1">
+                    <img src=" https://via.placeholder.com/600x200?text=Баннер+2" alt="Баннер 2">
+                    <img src=" https://via.placeholder.com/600x200?text=Баннер+3" alt="Баннер 3">
+                </div>
+                <button class="arrow right">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Товары дня справа -->
+        <section class="right-section">
+            <h2>Товар дня</h2>
+            <div class="product-carousel">
+                <button class="arrow left">&#10094;</button>
+                <div class="products">
+                    <div class="product-card">
+                        <img src=" https://via.placeholder.com/150x150?text=Товар+1" alt="Товар 1">
+                        <p>Товар 1</p>
+                        <span>500 ₽</span>
+                    </div>
+                    <div class="product-card">
+                        <img src=" https://via.placeholder.com/150x150?text=Товар+2" alt="Товар 2">
+                        <p>Товар 2</p>
+                        <span>700 ₽</span>
+                    </div>
+                </div>
+                <button class="arrow right">&#10095;</button>
+            </div>
+        </section>
+
     </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2025 Мой Первый Сайт</p>
+    </footer>
+
+    <!-- JS для карусели (минимальная логика) -->
+    <script>
+        function setupCarousel(carousel, itemsToShow = 1) {
+            const inner = carousel.querySelector('.carousel-inner') || carousel.querySelector('.products');
+            const arrows = carousel.querySelectorAll('.arrow');
+            let currentIndex = 0;
+
+            arrows.forEach(arrow => {
+                arrow.addEventListener('click', () => {
+                    const direction = arrow.classList.contains('left') ? -1 : 1;
+                    const totalItems = inner.children.length;
+
+                    currentIndex += direction;
+
+                    if (currentIndex < 0) {
+                        currentIndex = totalItems - itemsToShow;
+                    } else if (currentIndex > totalItems - itemsToShow) {
+                        currentIndex = 0;
+                    }
+
+                    const offset = -currentIndex * 100 / itemsToShow;
+                    inner.style.transform = `translateX(${offset}%)`;
+                });
+            });
+        }
+
+        // Инициализируем карусели
+        setupCarousel(document.querySelector('.carousel'), 1); // один баннер
+        setupCarousel(document.querySelector('.product-carousel'), 2); // по 2 товара
+    </script>
 
 </body>
 </html>
